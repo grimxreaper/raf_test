@@ -22,7 +22,12 @@
                 requestAnimationFrame(paint);
                 }
             }
-            function move() {
+            function move(timmy) {
+                if (timmy){
+                    let diff = timmy - number;
+                    console.log('frame', diff);
+                    number = timmy; //highResTimeStamp
+                }
                 xpos = xpos + 5;
                 box.style.transform = `translateX(${xpos}px)`;
                 let ww = document.body.clientWidth - 100;
@@ -31,7 +36,7 @@
                     requestAnimationFrame(move);
                 }
             }
-            window.requestAnimationFrame(paint);
+            window.requestAnimationFrame(move);
         </script>
     </body>
 </html>
