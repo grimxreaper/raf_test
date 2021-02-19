@@ -22,6 +22,15 @@
                 requestAnimationFrame(paint);
                 }
             }
+            function move() {
+                xpos = xpos + 5;
+                box.style.transform = `translateX(${xpos}px)`;
+                let ww = document.body.clientWidth - 100;
+
+                if (xpos < ww) {
+                    requestAnimationFrame(move);
+                }
+            }
             window.requestAnimationFrame(paint);
         </script>
     </body>
