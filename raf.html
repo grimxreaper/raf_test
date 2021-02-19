@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <header>
+            <h1>Request Animation Frame</h1>
+        </header>
+        <main>
+            <p id="output"></p>
+            <p id="box"></p>
+        </main>
+        <script>
+            let output = document.getElementById('output');
+            let box = document.getElementById('box');
+            let number = 0;
+            let xpos = 0;
+            function paint() {
+                number++;
+                output.textContent = number;
+
+                if (number < 300) {
+                requestAnimationFrame(paint);
+                }
+            }
+            window.requestAnimationFrame(paint);
+        </script>
+    </body>
+</html>
